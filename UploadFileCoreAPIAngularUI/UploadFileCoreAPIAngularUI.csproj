@@ -15,6 +15,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +23,27 @@
     <Content Remove="$(SpaRoot)**" />
     <None Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\src\app\shared\models\user.form.register.model.js" />
+    <None Remove="ClientApp\src\app\shared\models\user.form.register.model.js.map" />
+    <None Remove="ClientApp\src\app\shared\models\user.form.register.model.ts" />
+    <None Remove="ClientApp\src\app\shared\models\user.register.js" />
+    <None Remove="ClientApp\src\app\shared\models\user.register.js.map" />
+    <None Remove="ClientApp\src\app\shared\models\user.register.model.ts" />
+    <None Remove="ClientApp\src\app\shared\models\user.register.ts" />
+    <None Remove="ClientApp\src\app\shared\models\user.view.ts" />
+    <None Remove="ClientApp\src\app\shared\services\user.services.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\user.register.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\user.services.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Upload\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
